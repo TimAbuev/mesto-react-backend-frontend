@@ -14,7 +14,7 @@ function auth(req, res, next) {
   let payload;
   const jwt = authorization.replace('Bearer ', '');
   try {
-    payload = jsonwebtoken.verify(jwt, JWT_SECRET);
+    payload = jsonwebtoken.verify(jwt, JWT_SECRET || 'dev-secret');
     console.log(payload);
   } catch {
     next(new UnauthorizedError('неверный токен'));

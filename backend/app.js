@@ -1,6 +1,8 @@
 require('dotenv').config();
 
+const { NODE_ENV } = process.env;
 const express = require('express');
+
 // const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -20,7 +22,9 @@ app.use(routes);
 app.use(errorLogger);
 app.use(errors());
 
-mongoose.connect('mongodb://api.thecure.nomoredomains.monster:27017/mestodb', {
+const baseUrl = NODE_ENV === 'production' ? 'mongodb://api.thecure.nomoredomains.monster:27017/mestodb' : 'mongodb://localhost:27017/mestodb';
+
+mongoose.connect(`${baseUrl}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
