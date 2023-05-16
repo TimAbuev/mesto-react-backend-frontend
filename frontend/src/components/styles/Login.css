@@ -1,0 +1,39 @@
+.login {
+  margin: auto;
+  margin-top: 60px;
+  text-align: center;
+}
+.login__header {
+  margin-bottom: 50px;
+  font-weight: 900;
+  line-height: 29px;
+}
+.login__input {
+  padding: 0 0 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+  width: 358px;
+  margin-bottom: 30px;
+  display: block;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+}
+.login__button {
+  margin-top: 216px;
+  cursor: pointer;
+  border-bottom: 2px;
+  width: 358px;
+  height: 50px;
+  border-radius: 2px;
+  background-color: white;
+  font-weight: 400;
+  font-size: 18px;
+}
+.login__button:hover {
+  opacity: 85%;
+  transition: .3s;
+}
+

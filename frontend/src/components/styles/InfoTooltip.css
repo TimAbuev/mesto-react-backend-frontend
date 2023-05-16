@@ -1,0 +1,21 @@
+.infoTooltip__text {
+  color: black;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  max-width: 358px;
+  text-align: center;
+  margin: 0 auto;
+}
+.infoTooltip__img_lucky {
+  width: 120px;
+  height: 120px;
+  background-image: url(../../images/Union.svg);
+  margin: 60px auto 32px;
+}
+.infoTooltip__img_unlucky {
+  width: 120px;
+  height: 120px;
+  background-image: url(../../images/Unlucky.svg);
+  margin: 60px auto 32px;
+}
