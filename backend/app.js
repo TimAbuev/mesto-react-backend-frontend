@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 // const path = require('path');
 const mongoose = require('mongoose');
@@ -18,7 +20,7 @@ app.use(routes);
 app.use(errorLogger);
 app.use(errors());
 
-mongoose.connect('mongodb://localhost:27017/mestodb', {
+mongoose.connect('mongodb://api.thecure.nomoredomains.monster:27017/mestodb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

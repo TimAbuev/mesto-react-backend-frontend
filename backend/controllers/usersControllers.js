@@ -1,3 +1,5 @@
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
 
@@ -44,7 +46,7 @@ function login(req, res, next) {
         throw new UnauthorizedError('неверный логин или пароль');
       }))
     .then((user) => {
-      const jwt = jsonwebtoken.sign({ _id: user._id }, 'shhhhh', { expiresIn: '7d' });
+      const jwt = jsonwebtoken.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
       const { password, ...userWithoutPassword } = user.toObject();
       res.send({ user: userWithoutPassword, jwt });
     })

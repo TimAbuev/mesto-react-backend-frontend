@@ -7,7 +7,7 @@ class Api {
   }
 
   constructor() {
-    this._url = 'http://localhost:3000';
+    this._url = 'https://api.thecure.nomoredomains.monster';
     this._headers = {
       "content-type": "application/json",
       "authorization": `Bearer ${localStorage.getItem('jwt')}`,
