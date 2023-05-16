@@ -5,9 +5,9 @@ class Api {
     }
     return Promise.reject({ message: "Ошибка на стороне сервера", res })
   }
-
+ 
   constructor() {
-    this._url = 'https://api.thecure.nomoredomains.monster';
+    this._url = process.env.NODE_ENV === 'production' ? 'https://api.thecure.nomoredomains.monster' : 'http://localhost:3000';
     this._headers = {
       "content-type": "application/json",
       "authorization": `Bearer ${localStorage.getItem('jwt')}`,

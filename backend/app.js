@@ -22,9 +22,9 @@ app.use(routes);
 app.use(errorLogger);
 app.use(errors());
 
-const baseUrl = NODE_ENV === 'production' ? 'mongodb://api.thecure.nomoredomains.monster:27017/mestodb' : 'mongodb://localhost:27017/mestodb';
+const BASE_URL = NODE_ENV === 'production' ? 'mongodb://api.thecure.nomoredomains.monster:27017/mestodb' : 'mongodb://localhost:27017/mestodb';
 
-mongoose.connect(`${baseUrl}`, {
+mongoose.connect(`${BASE_URL}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

@@ -1,6 +1,6 @@
 import {checkResponse} from '../utils/checkResponse'
-
-export const BASE_URL = "https://api.thecure.nomoredomains.monster";
+const { NODE_ENV } = process.env;
+export const BASE_URL = NODE_ENV === 'production' ? 'https://api.thecure.nomoredomains.monster' : 'http://localhost:3000';
 
 export const register = (password, email) => {
   return fetch(`${BASE_URL}/signup`, {
