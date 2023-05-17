@@ -4,12 +4,12 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://thecure.nomoredomains.monster
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 51.250.105.10
 
-Frontend https://...
+Frontend https://thecure.nomoredomains.monster
 
-Backend https://...
+Backend https://api.thecure.nomoredomains.monster
