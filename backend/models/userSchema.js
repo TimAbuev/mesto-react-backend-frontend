@@ -60,4 +60,7 @@ module.exports = {
   avatarUserSchema: Joi.object({
     avatar: Joi.string().regex(regVAvatar).required(),
   }),
+  paramSchema: Joi.object({
+    userId: Joi.string().required().hex().length(24),
+  }),
 };

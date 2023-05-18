@@ -4,10 +4,10 @@ const {
   getUser, getUsers, updateProfile, updateAvatar, getCurrentUser,
 } = require('../controllers/usersControllers'); // важно соблюдать порядок импортируемых объектов
 const auth = require('../middleware/auth');
-const { profileUserSchema, avatarUserSchema } = require('../models/userSchema');
+const { profileUserSchema, avatarUserSchema, paramSchema } = require('../models/userSchema');
 
 router.get('/me', auth, getCurrentUser);
-router.get('/:userId', auth, getUser);
+router.get('/:userId', auth, celebrate({ params: paramSchema }), getUser);
 router.get('/', auth, getUsers);
 router.patch('/me', auth, celebrate({ body: profileUserSchema }), updateProfile);
 router.patch('/me/avatar', auth, celebrate({ body: avatarUserSchema }), updateAvatar);
