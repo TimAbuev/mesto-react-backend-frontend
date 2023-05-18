@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const { NODE_ENV } = process.env;
 const express = require('express');
-
 // const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -19,6 +18,9 @@ app.use(allowCORS);
 app.use(bodyParser.json());
 app.use(requestLogger);
 app.use(routes);
+app.use((req, res, next) => {
+  next(new NotFoundError('Not found'));
+});
 app.use(errorLogger);
 app.use(errors());
 
@@ -27,10 +29,6 @@ const BASE_URL = NODE_ENV === 'production' ? 'mongodb://api.thecure.nomoredomain
 mongoose.connect(`${BASE_URL}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
-
-app.use((req, res, next) => {
-  next(new NotFoundError('Not found'));
 });
 
 app.use((err, req, res, next) => {
