@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.105.10
+IP-адрес 158.160.5.244
 
 Frontend https://thecure.nomoredomains.monster
 
